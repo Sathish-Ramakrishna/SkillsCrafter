@@ -1,13 +1,13 @@
 
 USE master
 
-IF NOT EXISTS(SELECT * from sysdatabases where name='SkillsMgt')
+IF NOT EXISTS(SELECT * from sysdatabases where name='SkillsCrafter')
 BEGIN
-  CREATE DATABASE SkillsMgt
+  CREATE DATABASE SkillsCrafter
 END
 GO
 
-USE SkillsMgt
+USE SkillsCrafter
 
 IF NOT EXISTS (SELECT * FROM dbo.sysobjects where id = object_id(N'[Organizations]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
 BEGIN
