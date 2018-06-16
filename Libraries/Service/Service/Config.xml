@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+	<add key="ServiceUri" value="http://localhost/irms360/2.0/" />
+	<add key="Log" value="Log.txt" />
+	<add key="UpdatesUri" value="http://localhost/mobile/" />
+</Settings>
