@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Settings>
-	<!-- Connection -->
-	<add key="Connection" value="Data Source=198.179.146.23;Initial Catalog=irms360;Integrated Security=False;User ID=sa;Password=sequel;"/>
-	<!-- Recon Logistics -->
-	<add key="ReconPassword" value="carl"/>
-	<add key="ReconUri" value="http://qa.reconlogistics.com/"/>
-	<add key="ReconUser" value="cmeermans"/>
-</Settings>
