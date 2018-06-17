@@ -38,20 +38,14 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\_bin\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="HibernatingRhinos.Profiler.Appender.v4.0">
-      <HintPath>..\..\_bin\HibernatingRhinos.Profiler.Appender.v4.0.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\_bin\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\..\_bin\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="Upp.Shared">
-      <HintPath>..\..\..\..\_libraries\_bin\Upp.Shared.dll</HintPath>
+    <Reference Include="SkillsCrafter.Shared">
+      <HintPath>..\..\_bin\SkillsCrafter.Shared.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
