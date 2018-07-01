@@ -9,7 +9,7 @@
     <RootNamespace>SkillsCrafter.Service</RootNamespace>
     <AssemblyName>SkillsCrafter.Service</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -43,16 +43,18 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="SkillsCrafter.Shared">
-      <HintPath>..\..\_bin\SkillsCrafter.Shared.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GraphHandler.cs" />
+    <Compile Include="Implementations\MainService.cs" />
+    <Compile Include="Implementations\Service.cs" />
+    <Compile Include="Interfaces\IMainService.cs" />
     <Compile Include="MethodService.cs" />
     <Compile Include="IMethodService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ObjectResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -63,9 +65,25 @@
   <ItemGroup>
     <Content Include="Config.xml" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.csproj">
+      <Project>{af3e85d3-c292-4ed6-9414-0b73e85041de}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Shared\Shared.csproj">
+      <Project>{bc547ce0-3433-4f0d-af11-9d1789ec343f}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Serialization\Serialize.csproj">
+      <Project>{73469BAF-004B-4EA0-AF43-A43165A041EF}</Project>
+      <Name>Serialize</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "$(ProjectDir)..\..\_bin\"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
