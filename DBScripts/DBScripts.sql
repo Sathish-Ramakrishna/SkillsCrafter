@@ -22,22 +22,22 @@ BEGIN
 	CREATE TABLE [Resources] (
 	  [resourceId] 	[int] 			NOT NULL PRIMARY KEY,
 	  [OrgId] 		[int] 			NULL,
-	  [Username] 	[nvarchar] (64) NOT NULL UNIQUE,
-	  [Password] 	[nvarchar] (64) NOT NULL,	--TODO:change it to varbinary
+	  [Username] 	[nvarchar] (32) NOT NULL UNIQUE,
+	  [Password] 	[varbinary] (32) NOT NULL,	--TODO:change it to varbinary
 	  [FirstName] 	[nvarchar] (32) NOT NULL,
 	  [LastName] 	[nvarchar] (32) NOT NULL,
-	  [Email] 		[nvarchar] (64) NOT NULL,
-	  [Title] 		[nvarchar] (64) NOT NULL,
+	  [Email] 		[nvarchar] (32) NOT NULL,
+	  [Title] 		[nvarchar] (32) NOT NULL,
 	  [Created] 	[datetime] 		NOT NULL DEFAULT GETDATE(),
 	  [Modified] 	[datetime] 		NULL,
 	  [StartDate] 	[datetime] 		NOT NULL DEFAULT GETDATE(),
 	  [LastDate] 	[datetime] 		NULL,
 	  [isActive] 	[bit] 			NOT NULL DEFAULT 1,
-	  [isManager] 	[bit] 			NOT NULL DEFAULT 0,
-	  [isAdmin] 	[bit] 			NOT NULL DEFAULT 0,
+	  [ResourceType] [char] (1) 	NOT NULL DEFAULT 'E'
 	) ON [PRIMARY]
 END
 
+	CREATE TABLE [Resources] (
 IF NOT EXISTS (SELECT * FROM dbo.sysobjects where id = object_id(N'[Portfolios]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
 BEGIN
 	CREATE TABLE [Portfolios] (
@@ -64,7 +64,8 @@ BEGIN
 	CREATE TABLE [SkillsDefinitions] (
 	  [Id] 			[int] 			NOT NULL PRIMARY KEY,
 	  [OrgId] 		[int] 			NULL,
-	  [Name] 		[nvarchar] (64) NOT NULL UNIQUE,
+	  [ProductName] [nvarchar] (32) NULL,
+	  [SkillName] 		[nvarchar] (64) NOT NULL UNIQUE,
 	  [SkillType] 	[nvarchar] (32) NULL,
 	  [Beginner] 	[nvarchar] (250) NULL,
 	  [Intermediate] [nvarchar] (250) NULL,
@@ -126,3 +127,17 @@ BEGIN
 	  [Modified] 	[datetime] 		NULL,
 	) ON [PRIMARY]
 END
+--*******************************************************************************
+
+CREATE PROCEDURE sp_GetResources @Username nvarchar(32)
+AS
+SELECT * 
+FROM Resources
+WHERE Username = @Username
+------------------------------------------------------------
+CREATE PROCEDURE sp_GetSkillsDefinitions @ProductName nvarchar(32)
+AS
+SELECT * 
+FROM SkillsDefinitions
+WHERE ProductName = @ProductName
+------------------------------------------------------------

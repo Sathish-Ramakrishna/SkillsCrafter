@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            font-size: xx-large;
+            background-color:#ec3d1e;
+        }
+        .auto-style2 {
+            font-size: small;
+        }
+        .auto-style3 {
+            font-size: xx-large;
+            background-color: #ec3d1e;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table align="center" style="width: 1024px">
+                <tr style="height:60px;">
+                    <td class="auto-style1">SkillsCrafter</td>
+                </tr>
+                <tr style="height:30px;">>
+                    <td>
+                        <ul id="menu">
+                            <li><a href="Default.aspx">Home</a></li>
+                            <li><a href="About.aspx">About</a></li>
+                            <li><a href="Login.aspx">Login</a></li>
+                            <li><a href="Contact.aspx">Contact</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr style="height:400px; vertical-align:top;">
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr style="height:40px;background-color:#ec3d1e;">
+                    <td class="auto-style3">&nbsp;&nbsp;&nbsp;<span class="auto-style2">Copyright &copy; 2018 : SkillsCrafter</span></td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>

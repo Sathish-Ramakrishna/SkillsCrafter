@@ -11,27 +11,27 @@ END
 --Test Data Begin
 IF NOT EXISTS (SELECT 1 FROM Resources WHERE Username = 'testresource1')
 BEGIN
-	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title) VALUES (1, 1, 'testresource1', 'password','R1_FirstName', 'R1_LastName', 'nageshshugar@gmail.com', 'Dev');
+	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, ResourceType) VALUES (1, 1, 'testresource1', CAST('0x7D863905D7A951BD2ED4EDB4379D0B40' AS VARBINARY(32)),'R1_FirstName', 'R1_LastName', 'nageshshugar@gmail.com', 'Dev', 'E');
 END
 IF NOT EXISTS (SELECT 1 FROM Resources WHERE Username = 'testresource2')
 BEGIN
-	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title) VALUES (2, 1, 'testresource2', 'password','R2_FirstName', 'R2_LastName', 'nageshshugar@gmail.com', 'Dev');
+	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, ResourceType) VALUES (2, 1, 'testresource2', CAST('0x7D863905D7A951BD2ED4EDB4379D0B40' AS VARBINARY(32)),'R2_FirstName', 'R2_LastName', 'nageshshugar@gmail.com', 'Dev', 'E');
 END
 IF NOT EXISTS (SELECT 1 FROM Resources WHERE Username = 'testresource3')
 BEGIN
-	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title) VALUES (3, 1, 'testresource3', 'password','R3_FirstName', 'R3_LastName', 'nageshshugar@gmail.com', 'QA');
+	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, ResourceType) VALUES (3, 1, 'testresource3', CAST('0x7D863905D7A951BD2ED4EDB4379D0B40' AS VARBINARY(32)),'R3_FirstName', 'R3_LastName', 'nageshshugar@gmail.com', 'QA', 'E');
 END
 IF NOT EXISTS (SELECT 1 FROM Resources WHERE Username = 'testresource4')
 BEGIN
-	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title) VALUES (4, 1, 'testresource4', 'password','R4_FirstName', 'R4_LastName', 'nageshshugar@gmail.com', 'QA');
+	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, ResourceType) VALUES (4, 1, 'testresource4', CAST('0x7D863905D7A951BD2ED4EDB4379D0B40' AS VARBINARY(32)),'R4_FirstName', 'R4_LastName', 'nageshshugar@gmail.com', 'QA', 'E');
 END
 IF NOT EXISTS (SELECT 1 FROM Resources WHERE Username = 'testmanager')
 BEGIN
-	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, isManager) VALUES (5, 1, 'testmanager', 'password','M_FirstName', 'M_LastName', 'nageshshugar@gmail.com', 'Manager', 1);
+	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, ResourceType) VALUES (5, 1, 'testmanager', CAST('0x7D863905D7A951BD2ED4EDB4379D0B40' AS VARBINARY(32)),'M_FirstName', 'M_LastName', 'nageshshugar@gmail.com', 'Manager', 'M');
 END
 IF NOT EXISTS (SELECT 1 FROM Resources WHERE Username = 'testadmin')
 BEGIN
-	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, isAdmin) VALUES (6, 1, 'testadmin', 'password','A_FirstName', 'A_LastName', 'nageshshugar@gmail.com', 'Admin', 1);
+	INSERT INTO Resources (resourceId, OrgId, Username, Password, FirstName, LastName, Email, Title, ResourceType) VALUES (6, 1, 'testadmin', CAST('0x7D863905D7A951BD2ED4EDB4379D0B40' AS VARBINARY(32)),'A_FirstName', 'A_LastName', 'nageshshugar@gmail.com', 'Admin', 'A');
 END
 --Test Data End
 
@@ -80,15 +80,15 @@ END
 --Test Data Begin
 IF NOT EXISTS (SELECT 1 FROM SkillsDefinitions WHERE Id = 1 AND OrgId = 1 AND Name = '.Net')
 BEGIN
-	INSERT INTO SkillsDefinitions (Id, OrgId, Name, SkillType)VALUES (1, 1, '.Net', 'Technical');
+	INSERT INTO SkillsDefinitions (Id, OrgId, Name, ProductName, SkillType)VALUES (1, 1, '.Net', 'CRM_Product1', 'Technical');
 END
 IF NOT EXISTS (SELECT 1 FROM SkillsDefinitions WHERE Id = 2 AND OrgId = 1 AND Name = 'C#')
 BEGIN
-	INSERT INTO SkillsDefinitions (Id, OrgId, Name, SkillType)VALUES (2, 1, 'C#', 'Technical');
+	INSERT INTO SkillsDefinitions (Id, OrgId, Name, ProductName, SkillType)VALUES (2, 1, 'C#', 'CRM_Product1', 'Technical');
 END
 IF NOT EXISTS (SELECT 1 FROM SkillsDefinitions WHERE Id = 3 AND OrgId = 1 AND Name = 'Incoming Inventory')
 BEGIN
-	INSERT INTO SkillsDefinitions (Id, OrgId, Name, SkillType)VALUES (3, 1, 'Incoming Inventory', 'Functional');
+	INSERT INTO SkillsDefinitions (Id, OrgId, Name, ProductName, SkillType)VALUES (3, 1, 'Incoming Inventory', 'CRM_Product1', 'Functional');
 END
 --Test Data End
 

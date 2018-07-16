@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CustomerMasterPage.master.cs" Inherits="CustomerMasterPage" %>
+
+<%--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../css/GeneralStyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+        <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            font-size: xx-large;
+            background-color:#ec3d1e;
+        }
+        .auto-style2 {
+            font-size: small;
+        }
+        .auto-style3 {
+            font-size: xx-large;
+            background-color: #ec3d1e;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table align="center" style="width: 1024px">
+                <tr style="height: 60px;">
+                    <td class="auto-style1">SkillsCrafter</td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td style="align-content:inherit">
+                        <ul id="menu">
+                            <li class="dropdown" style="width: auto"><a href="PortfolioMgmt.aspx">Portfolio Management</a>
+                            </li>
+                            <li style="width:auto"><a href="ResourceMgmt.aspx">Resource Management</a></li>
+                            <li style="width:auto"><a href="KnowledgeMgmt.aspx">Knowledge Management</a></li>
+                            <li style="width:auto"><a href="../Login.aspx">Logout</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr style="height: 400px; vertical-align: top;">
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr style="height: 40px; background-color: #ec3d1e;">
+                    <td class="auto-style3">&nbsp;&nbsp;&nbsp;<span class="auto-style2">Copyright &copy; 2018 : SkillsCrafter</span></td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>--%>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<%--<meta name="viewport" content="width=device-width, initial-scale=1.0"> --%>
+		<title>SkillsCrafter</title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Push Wrapper -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+			<p><a href="#" id="trigger" class="menu-trigger">Menu</a></p>
+			<div class="mp-pusher" id="mp-pusher">
+
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu" style="width : 19%">
+					<div class="mp-level">
+						<h2 class="icon icon-world">SkillsCrafter</h2>
+						<ul>
+							<li class="icon icon-arrow-left">
+								<a class="icon icon-news" href="#">Portfolio Management</a>
+								<div class="mp-level">
+									<h2 class="icon icon-news">Portfolio Management</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+										<li><a href="#">Business Drivers</a></li>
+										<li><a href="#">Projects</a></li>
+										<li><a href="#">Ranking</a></li>
+										<li><a href="#">Prioritisation</a></li>
+										<li><a href="#">Dashboard</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a class="icon icon-news" href="#">Resource Management</a>
+								<div class="mp-level">
+									<h2 class="icon icon-news">Resource Management</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+										<li><a href="#">Organization</a></li>
+										<li><a href="#">Resources</a></li>
+										<li><a href="#">Utilization</a></li>
+										<li><a href="#">Dashboard</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="icon icon-arrow-left">
+								<a class="icon icon-news" href="#">Knowledge Management</a>
+								<div class="mp-level">
+									<h2 class="icon icon-news">Knowledge Management</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+										<li><a href="KMSkillsDefinitions.aspx">Skill Definitions & Ranking</a></li>
+										<li><a href="#">Skill Association</a></li>
+										<li><a href="#">Skill Assesment</a></li>
+										<li><a href="#">Dashboard</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="Profile.aspx">Profile</a></li>
+							<li><a href="Login.aspx">Logout</a></li>
+						</ul>
+							
+					</div>
+				</nav>
+				<!-- /mp-menu -->
+
+				<div class="scroller"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner">
+						<!-- Top Navigation -->
+						<header class="codrops-header">
+							<h1>SkillsCrafter<span>Smart way of Employee Management Technology</span></h1>
+						</header>
+                        <br />
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+						
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+			</div><!-- /pusher -->
+		</div><!-- /container -->
+        <script src="js/classie.js"></script>
+		<script src="js/mlpushmenu.js"></script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ), {
+				type : 'cover'
+			} );
+		</script>
+	</body>
+</html>

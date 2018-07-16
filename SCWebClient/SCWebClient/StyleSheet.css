@@ -1,0 +1,25 @@
+﻿body {
+}
+#menu {
+    width:1024px;
+    background-color:#ff0000;
+    height:40px;
+}
+    #menu li {
+        width:160px;
+        height:30px;
+        padding-top:10px;
+        padding-left:15px;
+        padding-right:15px;
+        float:left;
+        font-size:18px;
+        list-style:none;
+    }
+        #menu li a {
+            color : white;
+            text-decoration:none;
+        }
+             #menu li a:hover {
+            color : #ffd800;
+            font-size:22px;
+            }
